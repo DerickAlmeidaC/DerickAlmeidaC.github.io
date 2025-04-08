@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  
+  <style>
+  
+    #bloco{
+      height:auto;
+      width:auto;
+      background-color: bisque;
+      border: black solid 10px;
+      padding: 0px;
+      margin: 0px;
+      
+    }
+    header{
+      text-align: center;
+    }
+    #id_foto{
+      border-radius: solid 0.5px;
+    }
+
+    .inf{
+      margin-left: 10px;
+      border-radius: solid 0.5px;
+    }
+    .p{
+      width: 1564px;
+      background-color: green;
+    }
+    .n{
+      width: 1564px;
+      background-color:red;
+    }
+   
+  </style>
+  </head>
+  <body>
+
+    <div id="bloco">
+
+    <header>
+      <h1>CADASTRO</h1>
+    </header>
+
+    <form
+      action="https://webhook.site/0cc63d27-891f-4ac3-a41b-8a992ba88721"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <label for="id_nome" class="inf"
+        >Nome completo:
+        <br />
+        <input
+          type="text"
+          name="nome"
+          id="id_nome"
+          class="inf"
+          minlength="5"
+          maxlength="200"
+          placeholder="Informe seu nome completo"
+          required
+        />
+      </label>
+
+      <br />
+      <br />
+      <label for="id_email" class="inf"
+        >Email:
+        <br />
+        <input
+          type="email"
+          name="email"
+          id="id_email"
+          class="inf"
+          placeholder="Insira seu Eamil"
+          required
+        />
+      </label>
+
+      <br />
+      <br />
+      <label for="id_senha" class="inf"
+        >Senha:
+        <br />
+        <input
+          type="password"
+          name="senha"
+          id="id_senha"
+          class="inf"
+          placeholder="Informe sua senha"
+          required
+        />
+      </label>
+
+      <br />
+      <br />
+      <label for="id_telefone" class="inf"
+        >Telefone:
+        <br />
+        <input
+          type="tel"
+          name="telefone"
+          id="id_telefone"
+          class="inf"
+          placeholder="Informe seu site"
+          required
+        />
+      </label>
+      
+      <br />
+      <br />
+      <label for="id_data" class="inf"
+        >Data de nascimento
+        <br />
+        <input type="date" name="data" id="id_data" class="inf" />
+      </label>
+
+      <br />
+      <br />
+      <label for="id_site" class="inf"
+        >Site:
+        <br />
+        <input
+          type="url"
+          name="Site"
+          id="id_site"
+          class="inf"
+          placeholder="Informe seu telefone"
+          required
+        />
+      </label>
+
+      <input type="time" id="hora" name="hora" /> -->
+
+      <br />
+      <br />
+      <label for="id_foto" class="inf">
+        Foto:
+        <br />
+        <input
+          type="file"
+          name="foto"
+          id="id_foto"
+          class="inf"
+          class="cor"
+          accept=".jpg, .png, .pdf, .docx, .txt"
+          required
+        />
+      </label>
+
+      <br />
+      <br />
+      <label for="id_area" class="inf"
+        >Biografia:
+        <br />
+        <textarea name="textao" id="id_area" class="inf" class="cor" required></textarea>
+      </label>
+
+      <br />
+      <br />
+      <fieldset class="cor" class="inf">
+        <legend>Nível das habilidades</legend>
+
+        <label for="id_html"
+          >HTML:
+          <input
+            type="range"
+            name="HTML"
+            id="id_html"
+            min="0"
+            max="10"
+            step="1"
+            value="5"
+          />
+        </label>
+
+        <label for="id_js"
+          >HTML:
+          <input
+            type="range"
+            name="JS"
+            id="id_js"
+            min="0"
+            max="10"
+            step="1"
+            value="5"
+          />
+        </label>
+
+        <label for="id_css"
+          >CSS:
+          <input
+            type="range"
+            name="CSS"
+            id="id_basquete"
+            min="0"
+            max="10"
+            step="1"
+            value="5"
+          />
+        </label>
+
+      </fieldset>
+
+      <br />
+      <br />
+      <div class="botoes" class="inf">
+        <button type="submit" class="p">Enviar</button>
+        <br/>
+        <button type="reset" class="n">Zerar</button>
+      </div>
+
+    </div>
+
+    </form>
+  </body>
+</html>

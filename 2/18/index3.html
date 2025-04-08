@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTOESCOLA - INSCRIÇÃO</title>
+    <style>
+        .titulo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .inform{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .caixa{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .result{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cor{
+            background-color: gray;
+        }
+
+    </style>
+
+</head>
+<body class="cor">
+    <div class="titulo">
+            <h2>Autoescola-Inscrição</h2>
+    </div>
+    
+        <div class="inform">
+            <p>Informe sua idade abaixo para verificarmos sua elegibilidade.</p>
+        </div>
+            <div class="caixa">
+           <label for="numero">
+                <p>Idade:<input type="number" id="numero"/>
+                    <input
+ 
+                    type="button"
+                    value="Verificar"
+                    onclick="verificar()">
+                </p>
+            </label>
+            </div>
+    
+    <div class="result">
+        <p id="resultado"></p>
+        <script src="atividade3.js">
+        </script>
+    </div>
+</body>
+</html>
