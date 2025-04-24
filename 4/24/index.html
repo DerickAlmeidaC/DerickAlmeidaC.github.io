@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="formulario" ac>
+      <fieldset>
+        <legend>Checkboxes</legend>
+
+        <label for="id_java">
+          <input
+            type="checkbox"
+            name="tecnologia"
+            id="id_java"
+            value="java"
+          />Javaaaaaaaaaaa </label
+        ><br />
+
+        <label for="id_js">
+          <input
+            type="checkbox"
+            name="tecnologia"
+            id="id_js"
+            value="js"
+          />JS </label
+        ><br />
+
+        <label for="id_pythom">
+          <input
+            type="checkbox"
+            name="tecnologia"
+            id="id_pythom"
+            value="pythom"
+          />Pythom </label
+        ><br />
+      </fieldset>
+
+      <fieldset>
+        <legend>Radio buttons</legend>
+        <label for="id_fec">
+          <input
+            type="radio"
+            name="time"
+            id="id_fec"
+            value="Fortaleza"
+          />Fortaleza </label
+        ><br />
+
+        <label for="id_horizonte">
+          <input
+            type="radio"
+            name="time"
+            id="id_horizonte"
+            value="horizonte"
+          />Horizonte </label
+        ><br />
+
+        <label for="id_ferroviario">
+          <input
+            type="radio"
+            name="time"
+            id="id_ferroviario"
+            value="ferroviario"
+          />Ferroviario </label
+        ><br />
+      </fieldset>
+
+      <div class="botoes">
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpar</button>
+      </div>
+    </form>
+
+    <div id="bloco">Vazia</div>
+
+    <style>
+      #bloco {
+        display: flex;
+        flex-direction: row;
+        width: 100px;
+        height: 100px;
+        justify-content: center;
+        align-items: center;
+        background-color: gray;
+        margin: 100px;
+      }
+    </style>
+
+    <script>
+      let bloco = document.querySelector("#bloco");
+      bloco.addEventListener("mouseover", (e) => {
+        e.preventDefault();
+        bloco.innerHTML = "Entrou";
+        bloco.style.backgroundColor = "gren";
+      });
+
+      bloco.addEventListener("mouseout", (e) => {
+        e.preventDefault();
+        bloco.innerHTML = "Saiu";
+        bloco.style.backgroundColor = "gren";
+        bloco.style.color = "whiter";
+      });
+
+      bloco.addEventListener("dbclick", (e) => {
+        e.preventDefault();
+        bloco.innerHTML = "2Clicks";
+        bloco.style.backgroundColor = "red";
+        bloco.style.color = "whiter";
+      });
+
+      let formulario = document.querySelector("#formulario");
+      formulario.addEventListener("submit", (evento) => {
+        evento.preventDefault();
+
+        let checkboxes = document.querySelectorAll(
+          'input[name= "tecnologia"]:checked'
+        );
+        let selecao = "";
+        for (let i = 0; i < Checkboxes.length; i++) {
+          selecao += "\n" + Checkboxes[i].value;
+        }
+
+        let radio = document.querySelector('input[name="time"]:cheked');
+        selecao += "\nMeu radio button selecionado:" + radio.value;
+        console.log(radio);
+        alert(radio);
+      });
+    </script>
+  </body>
+</html>

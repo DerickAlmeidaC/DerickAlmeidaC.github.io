@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabuada</title>
+  </head>
+  <body>
+    <form action="">
+      <h1>Tabuada</h1>
+
+      <label for="id_numero"
+        >Número:
+        <input
+          type="number"
+          name="numero"
+          id="id_numero"
+          placeholder="Informe um número"
+        />
+      </label>
+
+      <br /><br />
+      <label for="operacao">
+        Operação:
+        <select name="operacao" id="id_operacao">
+          <option value="" disabled selected>Selecione a operação</option>
+          <option value="+">Adição</option>
+          <option value="-">Subtração</option>
+          <option value="*">Multiplicação</option>
+          <option value="/">Divisão</option>
+        </select>
+      </label>
+
+      <br /><br />
+      <div class="botoes">
+        <button type="submit">Calcular</button>
+        <button type="reset">Limpar</button>
+      </div>
+
+      <div id="id_resultado"></div>
+      <script s></script>
+    </form>
+
+    <script>
+      document.querySelector("form").addEventListener("submit", (evento) => {
+        evento.defaultPrevented();
+        let numero = document.getElementById("id_numero").value;
+        let operacao = document.getElementById("id_operacao").value;
+        let resultado = document.getElementById("id_resultado");
+
+        switch (operacao) {
+          case "+":
+            for (let i = 0; i < 10; i++) {
+              resultado += "<br>" + numero + " + " + i + " = " + (numero + i);
+            }
+            break;
+
+          case "-":
+            for (let i = 0; i < 10; i++) {
+              resultado += "<br>" + numero + " - " + i + " = " + (numero - i);
+            }
+            break;
+
+          case "*":
+            for (let i = 0; i < 10; i++) {
+              resultado += "<br>" + numero + " * " + i + " = " + numero * i;
+            }
+            break;
+
+          case "/":
+            for (let i = 0; i < 10; i++) {
+              resultado += "<br>" + numero + " / " + i + " = " + numero / i;
+              break;
+            }
+        }
+      });
+    </script>
+  </body>
+</html>
