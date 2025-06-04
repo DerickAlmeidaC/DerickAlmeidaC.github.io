@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Projetos Escolares</title>
+  </head>
+  <body>
+    <form id="formulario">
+      <fieldset>
+        <legend>Cadastro de Projetos</legend>
+        <label>
+          Título:
+          <input
+            type="text"
+            id="id_titulo"
+            placeholder="Digite o título"
+            required
+          />
+        </label>
+        <br />
+        <label>
+          Orientador:
+          <input
+            type="text"
+            id="id_orientador"
+            placeholder="Informe o orientador"
+            required
+          />
+        </label>
+        <br />
+        <div id="botoes">
+          <button id="id_salvar" type="submit">Salvar</button>
+          <button id="id_listar" type="button">Listar</button>
+        </div>
+      </fieldset>
+    </form>
+
+    <div id="listaProjetos"></div>
+
+    <dialog id="dialogTela">
+      <fieldset>
+        <legend>Tela modal</legend>
+        <label>
+          Título:
+          <input
+            type="text"
+            id="edit_titulo"
+            placeholder="Digite o título"
+            required
+          />
+        </label>
+        <br />
+        <label>
+          Nome:
+          <input
+            type="text"
+            id="edit_orientador"
+            placeholder="Informe o orientador"
+            required
+          />
+        </label>
+        <div class="botoes_edit">
+          <button id="alterar">Alterar</button>
+          <button id="fechar">Fechar</button>
+        </div>
+      </fieldset>
+    </dialog>
+
+    <script type="module" src="script_sistema.js"></script>
+  </body>
+</html>

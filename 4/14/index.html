@@ -6,11 +6,11 @@
     <title>Tabuada</title>
   </head>
   <body>
-    <form action="">
+    <form id="form_tabuada">
       <h1>Tabuada</h1>
 
-      <label for="id_numero"
-        >Número:
+      <label for="id_numero">
+        Número:
         <input
           type="number"
           name="numero"
@@ -38,41 +38,49 @@
       </div>
 
       <div id="id_resultado"></div>
-      <script s></script>
     </form>
 
     <script>
-      document.querySelector("form").addEventListener("submit", (evento) => {
-        evento.defaultPrevented();
-        let numero = document.getElementById("id_numero").value;
-        let operacao = document.getElementById("id_operacao").value;
-        let resultado = document.getElementById("id_resultado");
+      const form = document.getElementById("form_tabuada");
+      const resultado = document.getElementById("id_resultado");
 
-        switch (operacao) {
-          case "+":
-            for (let i = 0; i < 10; i++) {
-              resultado += "<br>" + numero + " + " + i + " = " + (numero + i);
-            }
-            break;
+      form.addEventListener("submit", (evento) => {
+        evento.preventDefault();
 
-          case "-":
-            for (let i = 0; i < 10; i++) {
-              resultado += "<br>" + numero + " - " + i + " = " + (numero - i);
-            }
-            break;
+        const numero = parseFloat(document.getElementById("id_numero").value);
+        const operacao = document.getElementById("id_operacao").value;
 
-          case "*":
-            for (let i = 0; i < 10; i++) {
-              resultado += "<br>" + numero + " * " + i + " = " + numero * i;
-            }
-            break;
-
-          case "/":
-            for (let i = 0; i < 10; i++) {
-              resultado += "<br>" + numero + " / " + i + " = " + numero / i;
-              break;
-            }
+        if (isNaN(numero) || !operacao) {
+          resultado.innerHTML =
+            "<p>Informe um número e selecione uma operação.</p>";
+          return;
         }
+
+        let calculo = "<h2>Resultado:</h2>";
+
+        for (let i = 0; i <= 10; i++) {
+          let res;
+          switch (operacao) {
+            case "+":
+              res = numero + i;
+              calculo += `<p>${numero} + ${i} = ${res}</p>`;
+              break;
+            case "-":
+              res = numero - i;
+              calculo += `<p>${numero} - ${i} = ${res}</p>`;
+              break;
+            case "*":
+              res = numero * i;
+              calculo += `<p>${numero} * ${i} = ${res}</p>`;
+              break;
+            case "/":
+              res = i === 0 ? "Indefinido" : (numero / i).toFixed(2);
+              calculo += `<p>${numero} / ${i} = ${res}</p>`;
+              break;
+          }
+        }
+
+        resultado.innerHTML = calculo;
       });
     </script>
   </body>

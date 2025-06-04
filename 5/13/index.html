@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tela de login</title>
+  </head>
+  <body>
+    <h1>Sec EEEP Login</h1>
+
+    <label
+      >Email:
+      <input type="email" id="id_email" placeholder="Digite o email" required />
+    </label>
+    <br />
+
+    <label
+      >Senha:
+      <input
+        type="password"
+        id="id_senha"
+        placeholder="Digite a senha"
+        required
+      />
+    </label>
+    <br />
+
+    <div class="Entrar">
+      <button onclick="mover()">Entrar</button>
+    </div>
+
+    <script>
+      function mover() {
+        const email = document.getElementById("id_email").value;
+        const senha = document.getElementById("id_senha").value;
+        const email_valido = "admin@admin.com";
+        const senha_valido = "admin";
+        console.log("Email:" + email + "\nSenha" + senha);
+        if (email == email_valido && senha == senha_valido) {
+          window.location.href = "sistema.html";
+        } else {
+          alert(`Senha ou Email incorreto`);
+        }
+      }
+    </script>
+  </body>
+</html>
