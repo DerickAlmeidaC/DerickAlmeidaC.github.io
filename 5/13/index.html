@@ -4,44 +4,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tela de login</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>Sec EEEP Login</h1>
-
-    <label
-      >Email:
-      <input type="email" id="id_email" placeholder="Digite o email" required />
-    </label>
-    <br />
-
-    <label
-      >Senha:
-      <input
-        type="password"
-        id="id_senha"
-        placeholder="Digite a senha"
-        required
+    <div class="moldura">
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
       />
-    </label>
-    <br />
+      <h2><i class="fa-regular fa-user fa-lg"></i></h2>
+      <div class="input-icon">
+        <h1>Sec EEEP Login</h1>
+      </div>
 
-    <div class="Entrar">
-      <button onclick="mover()">Entrar</button>
-    </div>
+      <label
+        >Email:
+        <input
+          type="email"
+          id="id_email"
+          placeholder="Digite o email"
+          required
+        />
+      </label>
+      <br />
 
-    <script>
-      function mover() {
-        const email = document.getElementById("id_email").value;
-        const senha = document.getElementById("id_senha").value;
-        const email_valido = "admin@admin.com";
-        const senha_valido = "admin";
-        console.log("Email:" + email + "\nSenha" + senha);
-        if (email == email_valido && senha == senha_valido) {
-          window.location.href = "sistema.html";
-        } else {
-          alert(`Senha ou Email incorreto`);
+      <label
+        >Senha:
+        <input
+          type="password"
+          id="id_senha"
+          placeholder="Digite a senha"
+          required
+        />
+      </label>
+      <br />
+
+      <div class="Entrar">
+        <button onclick="mover()">Entrar</button>
+      </div>
+
+      <script>
+        function mover() {
+          const email = document.getElementById("id_email").value;
+          const senha = document.getElementById("id_senha").value;
+          const email_valido = "admin@admin.com";
+          const senha_valido = "admin";
+          console.log("Email:" + email + "\nSenha" + senha);
+          if (email == email_valido && senha == senha_valido) {
+            window.location.href = "sistema.html";
+          } else {
+            alert(`Senha ou Email incorreto`);
+          }
         }
-      }
-    </script>
+      </script>
+    </div>
   </body>
 </html>
