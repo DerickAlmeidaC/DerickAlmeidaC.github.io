@@ -11,13 +11,9 @@ class projeto {
   getOrientador() {
     return this.orientador;
   }
-  texto() {
-    return `Título : ${this.titulo} || Orientador : ${this.orientador} `;
-  }
 }
 
-const projetos_arrey = [];
-let Projeto = JSON.parse(localStorage.getItem("projetos"));
+const projetos_arrey = JSON.parse(localStorage.getItem("projetos")) || [];
 
 let formulario = document.getElementById("formulario");
 
