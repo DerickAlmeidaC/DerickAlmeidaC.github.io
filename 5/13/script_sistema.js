@@ -11,6 +11,9 @@ class projeto {
   getOrientador() {
     return this.orientador;
   }
+  texto() {
+    return `Título : ${this.titulo} || Orientador : ${this.orientador} `;
+  }
 }
 
 const projetos_arrey = [];
@@ -37,26 +40,24 @@ let formulario = document.getElementById("formulario");
 //   console.log(projetos_arrey);
 // });
 
-formulario.addEventListener("submit", (event) => {
-  event.preventDefault();
+document
+  .getElementById("formulario")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
 
-  const titulo = document.getElementById("id_titulo").value;
-  const orientador = document.getElementById("id_orientador").value;
+    const titulo = document.getElementById("id_titulo").value;
+    const orientador = document.getElementById("id_orientador").value;
 
-  const solicit = new projeto(titulo, orientador);
+    const solicit = new projeto(titulo, orientador);
+    projetos_arrey.push({
+      titulo: solicit.getTitulo(),
+      orientador: solicit.getOrientador(),
+    });
 
-  // Recupera projetos previamente armazenados
-  let projetos_salvos = JSON.parse(localStorage.getItem("projetos")) || [];
+    localStorage.setItem("projetos", JSON.stringify(projetos_arrey));
 
-  // Adiciona novo projeto ao vetor existente
-  projetos_salvos.push({
-    titulo: solicit.getTitulo(),
-    orientador: solicit.getOrientador(),
+    document.getElementById("formulario").reset();
   });
-
-  // Atualiza o localStorage
-  localStorage.setItem("projetos", JSON.stringify(projetos_salvos));
-});
 
 // document.getElementById("id_listar").addEventListener("click", (event) => {
 //   event.preventDefault();
@@ -95,6 +96,7 @@ document.getElementById("id_listar").addEventListener("click", function () {
     // Botão Editar
     const botaoEditar = document.createElement("button");
     botaoEditar.textContent = "Editar";
+    botaoEditar.classList.add("btn-editar");
     botaoEditar.addEventListener("click", function () {
       const dialogTela = document.getElementById("dialogTela");
       const tituloInput = document.getElementById("edit_titulo");
@@ -102,10 +104,11 @@ document.getElementById("id_listar").addEventListener("click", function () {
       const alterarBtn = document.getElementById("alterar");
       const fecharBtn = document.getElementById("fechar");
 
+      // Popula os campos da modal com os valores atuais
       tituloInput.value = projeto.titulo;
       orientadorInput.value = projeto.orientador;
 
-      dialogTela.showModal();
+      dialogTela.showModal(); // Exibe a tela modal
 
       fecharBtn.onclick = () => {
         dialogTela.close();
@@ -119,7 +122,7 @@ document.getElementById("id_listar").addEventListener("click", function () {
         localStorage.setItem("projetos", JSON.stringify(projetos));
 
         dialogTela.close();
-        document.getElementById("id_listar").click();
+        document.getElementById("id_listar").click(); // Atualiza a lista exibida
       };
     });
 
@@ -127,10 +130,11 @@ document.getElementById("id_listar").addEventListener("click", function () {
 
     const botaoExcluir = document.createElement("button");
     botaoExcluir.textContent = "Excluir";
+    botaoExcluir.classList.add("btn-excluir");
     botaoExcluir.addEventListener("click", function () {
       projetos.splice(index, 1);
       localStorage.setItem("projetos", JSON.stringify(projetos));
-      document.getElementById("id_listar").click();
+      document.getElementById("id_listar").click(); // Atualiza a lista
     });
     containerProjeto.appendChild(botaoExcluir);
 

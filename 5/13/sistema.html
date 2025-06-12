@@ -3,15 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sistema.css" />
+
+    <style>
+    .btn-alterar, .btn-fechar {
+      all: unset;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 10px;
+      margin-right: 8px;
+      border: none;
+    }
+    .btn-alterar {
+      background-color: #28a745;
+      color: white;
+    }
+    .btn-fechar {
+      background-color: #dc3545;
+      color: white;
+    }
+</style>
+
     <title>Cadastro de Projetos Escolares</title>
   </head>
-  <link rel="stylesheet" href="sistema.css" />
   <body>
+  <div class="container">
     <form id="formulario">
       <fieldset>
         <legend>Cadastro de Projetos</legend>
-        <label>
-          Título:
+        <label
+          >Título:
           <input
             type="text"
             id="id_titulo"
@@ -20,8 +44,9 @@
           />
         </label>
         <br />
-        <label>
-          Orientador:
+
+        <label
+          >Orientador:
           <input
             type="text"
             id="id_orientador"
@@ -30,20 +55,23 @@
           />
         </label>
         <br />
+
         <div id="botoes">
           <button id="id_salvar" type="submit">Salvar</button>
+
           <button id="id_listar" type="button">Listar</button>
         </div>
       </fieldset>
     </form>
 
     <div id="listaProjetos"></div>
+  </div>
 
     <dialog id="dialogTela">
       <fieldset>
-        <legend>Editor</legend>
-        <label>
-          Título:
+        <legend>Tela modal</legend>
+        <label
+          >Título:
           <input
             type="text"
             id="edit_titulo"
@@ -52,22 +80,24 @@
           />
         </label>
         <br />
-        <label>
-          Orientador:
+
+        <label
+          >Nome:
           <input
-            type="text"
-            id="edit_orientador"
-            placeholder="Informe o orientador"
-            required
-          />
+          type="text"
+          id="edit_orientador"
+          placeholder="Informe o orientador"
+          required
+        />
         </label>
+
         <div class="botoes_edit">
-          <button id="alterar">Alterar</button>
-          <button id="fechar">Fechar</button>
+          <button id="alterar" class="btn-alterar">Alterar</button>
+          <button id="fechar" class="btn-fechar">Fechar</button>
         </div>
       </fieldset>
     </dialog>
-
+  </div>
     <script type="module" src="script_sistema.js"></script>
   </body>
 </html>
